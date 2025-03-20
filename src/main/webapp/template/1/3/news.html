@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+<title>{ms:global.name/}</title>
+<meta name="keywords" content="{ms:global.keyword/}" />
+<meta name="description" content="{ms:global.descrip/}" />
+<link rel="stylesheet" href="/{ms:global.style/}/css/animate.min.css">
+<link rel="stylesheet" href="/{ms:global.style/}/css/swiper.min.css">
+<link rel="stylesheet" href="/{ms:global.style/}/css/style.css">
+<script src="/{ms:global.style/}/js/jquery.min.js"></script>
+<script src="/{ms:global.style/}/js/wow.min.js"></script>
+<script src="/{ms:global.style/}/js/swiper.min.js"></script>
+<script src="/{ms:global.style/}/js/style.js"></script>
+</head>
+<body style="background-color: #f8f8f8;">
+
+<!--页面头部-->
+<#include "head.html" />
+<div class="banner-sub banner-content" style="background-image: url(<#if '{@ms:file field.typelitpic/}'!=''>{@ms:file field.typelitpic/}<#else>{ms:channel type='parent'}{@ms:file field.typelitpic/}{/ms:channel}</#if>);">
+  <div class="container">
+    <div class="inner">
+      <div class="content-title">
+        <h1>${field.title}</h1>
+        <p> <span class="weizhi"> 当前位置：<a href="javascript:;" class="ms-channel-path-index"> 首页 </a>{ms:channel type="path"}     >> <a href={ms:global.html/}${field.typelink} class="ms-channel-path-link">         ${field.typetitle}  </a>     {/ms:channel}</script>次</span> </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="container clearfix"> 
+    
+    <!--侧边栏-->
+    <ul class="v-lanmu">
+      {ms:arclist size=6}
+      <li><a href="{ms:global.html/}${field.link}"><strong>{@ms:len field.title 10 /}</strong>${field.typetitle}</a></li>
+      {/ms:arclist}
+    </ul>
+    <div class="v-main">
+      <div class="content-main">
+        <div class="content-body">${field.content}</div>
+        
+        <!--分页导航--> 
+        
+        <!--上一篇下一篇-->
+        <ul class="content-exp">
+          <li>上一篇：<a href="<#if pre.link !=''>{ms:global.html/}${pre.link}<#else>javascript:;</#if>">${pre.title}</a></li>
+          <li>下一篇：<a href="<#if next.link !=''>{ms:global.html/}${next.link}<#else>javascript:;</#if>">${next.title}</a></li>
+        </ul>
+        <div class="content-tips"> 我们凭借多年的网站建设经验，坚持以“<strong>帮助中小企业实现网络营销化</strong>”为宗旨，累计为4000多家客户提供品质建站服务，得到了客户的一致好评。如果您有网站建设、网站改版、域名注册、主机空间、手机网站建设、网站备案等方面的需求...<br>
+          请立即点击咨询我们或拨打咨询热线：<strong> 18888888888</strong>，我们会详细为你一一解答你心中的疑难。<a href="/" rel="nofollow" target="_blank" class="ss">项目经理在线</a> </div>
+      </div>
+    </div>
+    <div class="content-xg clearfix"> 
+      <!--相关文章，如果没有则显示最新文章-->
+      <div class="content-xg-left">
+        <div class="tit">相关阅读</div>
+        <ul>
+          {ms:arclist size=4}
+          <li><a href="{ms:global.html/}${field.link}"><span>${field.date?string("yyyy-MM-dd")}</span>${field.title}</a></li>
+          {/ms:arclist}
+        </ul>
+      </div>
+      
+      <!--热门文章-->
+      <div class="content-xg-right">
+        <div class="tit">猜您喜欢</div>
+        <ul>
+          {ms:arclist size=4}
+          <li><a href="{ms:global.html/}${field.link}"><span>${field.date?string("yyyy-MM-dd")}</span>${field.title}</a></li>
+          {/ms:arclist}
+        </ul>
+      </div>
+    </div>
+    <ul class="webdes clearfix">
+      <li><a>诚信的合作流程</a></li>
+      <li><a>实惠的网站制作报价</a></li>
+      <li><a>稳定的网站运行速度</a></li>
+      <li><a>完善的售后体系</a></li>
+      <li><a>上千家真实客户案例</a></li>
+      <li><a>免费网站备案</a></li>
+      <li><a>赠送域名空间</a></li>
+      <li><a>网站营销推广方案</a></li>
+    </ul>
+  </div>
+</div>
+<div class="section in-ready" style="padding-top: 0;">
+  <div class="container">
+    <h4>我们已经准备好了,你呢？</h4>
+    <div class="btn"><a href="javascript:;" rel="nofollow" target="_blank" style="border-color: #f8f8f8;">获取网站建设报价</a></div>
+    <p>2020我们与您携手共赢，为您的企业形象保驾护航！</p>
+  </div>
+</div>
+
+<!--页面底部-->
+<#include "foot.html" />
+<script>
+    var banner = new Swiper('.banner', {
+        autoplay: true,
+        loop: true,
+        navigation: {
+            prevEl: '.banner .swiper-button-prev',
+            nextEl: '.banner .swiper-button-next'
+        },
+        pagination: {
+            el: '.banner .swiper-pagination',
+            clickable: true
+        },
+        on: {
+            init: function (swiper) {
+                var slide = this.slides.eq(0);
+                slide.addClass('ani-slide');
+            },
+            transitionStart: function () {
+                for (i = 0; i < this.slides.length; i++) {
+                    var slide = this.slides.eq(i);
+                    slide.removeClass('ani-slide');
+                }
+            },
+            transitionEnd: function () {
+                var slide = this.slides.eq(this.activeIndex);
+                slide.addClass('ani-slide');
+
+            },
+        }
+    });
+
+    $('.timer').each(function () {
+        $(this).countTo();
+    });
+
+    tabsSwiper('.index-news-menu', '.index-news-con');
+</script>
+</body>
+</html>

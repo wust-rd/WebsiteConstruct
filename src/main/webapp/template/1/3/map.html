@@ -1,0 +1,59 @@
+<div class="map" id="allmap"> 
+  <script type="text/javascript" src="/{ms:global.style/}/js/8f5152307e994b028fe8af70e35a8c66.js"></script>
+  <style type="text/css">
+
+          #allmap {width: 98%;height: 450px;overflow: hidden;font-family:"微软雅黑";}
+
+          #allmap b{color: #CC5522;font-size: 14px; }
+
+          #allmap img{max-width: none;}
+
+          </style>
+  <script type="text/javascript">
+
+              var map = new BMap.Map("allmap");
+
+              map.centerAndZoom(new BMap.Point(116.397513,39.908739), 18);
+
+              var marker1 = new BMap.Marker(new BMap.Point(116.397513,39.908739));  // 创建标注
+
+              map.addOverlay(marker1);              // 将标注添加到地图中
+
+              //marker1.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画        
+
+              //创建信息窗口 
+
+              var infoWindow1 = new BMap.InfoWindow("<b>某某公司</b><br>地址：北京市天安门<br>电话：488-888-8888");
+
+              marker1.openInfoWindow(infoWindow1);
+
+              //marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1);}); 
+
+              //向地图中添加缩放控件
+
+           var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+
+           map.addControl(ctrl_nav);
+
+                //向地图中添加缩略图控件
+
+           var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+
+           map.addControl(ctrl_ove);
+
+                //向地图中添加比例尺控件
+
+           var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+
+           map.addControl(ctrl_sca);
+
+           map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+
+                  map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+
+                  map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+
+                  map.enableKeyboard();//启用键盘上下左右键移动地       
+
+          </script> 
+</div>

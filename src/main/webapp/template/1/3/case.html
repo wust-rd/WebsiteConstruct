@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+<title>{ms:global.name/}</title>
+<meta name="keywords" content="{ms:global.keyword/}" />
+<meta name="description" content="{ms:global.descrip/}" />
+<link rel="stylesheet" href="/{ms:global.style/}/css/animate.min.css">
+<link rel="stylesheet" href="/{ms:global.style/}/css/swiper.min.css">
+<link rel="stylesheet" href="/{ms:global.style/}/css/style.css">
+<script src="/{ms:global.style/}/js/jquery.min.js"></script>
+<script src="/{ms:global.style/}/js/wow.min.js"></script>
+<script src="/{ms:global.style/}/js/swiper.min.js"></script>
+<script src="/{ms:global.style/}/js/style.js"></script>
+</head>
+<body style="background-color: #f8f8f8;">
+
+<!--页面头部-->
+<#include "head.html" />
+
+<!--栏目banner图-->
+<div class="banner-sub" style="background-image: url(<#if '{@ms:file field.typelitpic/}'!=''>{@ms:file field.typelitpic/}<#else>{ms:channel type='parent'}{@ms:file field.typelitpic/}{/ms:channel}</#if>);">
+  <div class="container">
+    <div class="inner wow slideInLeft">${field.typetitle}</div>
+  </div>
+</div>
+<div class="content-case-title">
+  <div class="container clearfix">
+    <div class="content-case-title-left">
+      <h4>${field.title}</h4>
+      <dl>
+        <dt>项目简介</dt>
+        <dd>{@ms:len field.descrip 60 /}</dd>
+      </dl>
+      <dl>
+        <dt class="ico-fw">服务内容</dt>
+        <dd>
+          <div class="cehuap">
+            <p>前期策划</p>
+            <p>网页设计</p>
+            <p>前端开发</p>
+            <p>后台开发</p>
+            <p>内容录入</p>
+            <p>售后维护</p>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <div class="content-case-title-right">
+      <div class="view">点击：<script src=style/js/2e606678066d4cc1bcdbe71c6093dc47.js></script></div>
+      <div class="btn"> <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=123456789&amp;site=qq&amp;menu=yes">我有类似需求</a> <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=123456789&amp;site=qq&amp;menu=yes">获取设计报价</a> </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="container clearfix">
+    <div class="content-main">
+      <div class="content-body">${field.content}</div>
+      
+      <!--分页导航--> 
+      
+      <!--上一篇下一篇-->
+      <ul class="content-exp">
+        <li>上一篇：<a href="<#if pre.link !=''>{ms:global.html/}${pre.link}<#else>javascript:;</#if>">${pre.title}</a></li>
+        <li>下一篇：<a href="<#if next.link !=''>{ms:global.html/}${next.link}<#else>javascript:;</#if>">${next.title}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--相关文章，没有则显示最新文章-->
+<div class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="content-case-xg">
+      <div class="tit">相关案例 RELATED CASES</div>
+      <ul class="list-4 clearfix">
+        {ms:arclist size=6}
+        <li><a href="{ms:global.html/}${field.link}">
+          <div class="img-cover"><span style="background-image: url({@ms:file field.litpic/});"></span></div>
+          <div class="text">
+            <h4>${field.title}</h4>
+          </div>
+          </a></li>
+        {/ms:arclist}
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="section" style="overflow: hidden;padding-top: 0;">
+  <div class="container">
+    <ul class="in-partone clearfix">
+      <li class="wow bounceInLeft">
+        <div class="wrap">
+          <h4>继续在老套路中化作尘埃</h4>
+          <a href="javascript:;" rel="nofollow" target="_blank">评估旧网站</a> </div>
+      </li>
+      <li class="wow bounceInRight">
+        <div class="wrap">
+          <h4>还是厚积薄发重新崛起</h4>
+          <a href="javascript:;" rel="nofollow" target="_blank">启动新征程</a> </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--页面底部-->
+<#include "foot.html" />
+<script>
+    var banner = new Swiper('.banner', {
+        autoplay: true,
+        loop: true,
+        navigation: {
+            prevEl: '.banner .swiper-button-prev',
+            nextEl: '.banner .swiper-button-next'
+        },
+        pagination: {
+            el: '.banner .swiper-pagination',
+            clickable: true
+        },
+        on: {
+            init: function (swiper) {
+                var slide = this.slides.eq(0);
+                slide.addClass('ani-slide');
+            },
+            transitionStart: function () {
+                for (i = 0; i < this.slides.length; i++) {
+                    var slide = this.slides.eq(i);
+                    slide.removeClass('ani-slide');
+                }
+            },
+            transitionEnd: function () {
+                var slide = this.slides.eq(this.activeIndex);
+                slide.addClass('ani-slide');
+
+            },
+        }
+    });
+
+    $('.timer').each(function () {
+        $(this).countTo();
+    });
+
+    tabsSwiper('.index-news-menu', '.index-news-con');
+</script>
+</body>
+</html>

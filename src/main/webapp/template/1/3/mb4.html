@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+<title>{ms:global.name/}</title>
+<meta name="keywords" content="{ms:global.keyword/}" />
+<meta name="description" content="{ms:global.descrip/}" />
+<link rel="stylesheet" href="/{ms:global.style/}/css/animate.min.css">
+<link rel="stylesheet" href="/{ms:global.style/}/css/swiper.min.css">
+<link rel="stylesheet" href="/{ms:global.style/}/css/style.css">
+<script src="/{ms:global.style/}/js/jquery.min.js"></script>
+<script src="/{ms:global.style/}/js/wow.min.js"></script>
+<script src="/{ms:global.style/}/js/swiper.min.js"></script>
+<script src="/{ms:global.style/}/js/style.js"></script>
+</head>
+<body>
+
+<!--页面头部-->
+<#include "head.html" />
+
+
+<!--栏目banner图-->
+<div class="banner-sub" style="background-image: url(<#if '{@ms:file field.typelitpic/}'!=''>{@ms:file field.typelitpic/}<#else>{ms:channel type='parent'}{@ms:file field.typelitpic/}{/ms:channel}</#if>);">
+  <div class="container">
+    <div class="inner wow slideInLeft">${field.typetitle}</div>
+  </div>
+</div>
+
+<!--子栏目导航2-->
+
+<div class="lanmu">
+  <div class="container">
+    <div class="lanmu-title">网站建设</div>
+    <ul class="clearfix">
+      <#if field.typeleaf>
+      {ms:channel type='level'}
+      <li <#if field.typeid == typeid || (ids?has_content && ids?split(",")?seq_contains(field.typeid.toString()))>class="active"
+    </#if>><a href="<#if field.type==3>{ms:global.html/}${field.typeurl}<#else>{ms:global.html/}${field.typelink}</#if>" >${field.typetitle}</a></li>
+    {/ms:channel}
+    <#else>
+    {ms:channel type='son'}
+    <li <#if field.typeid == typeid || (ids?has_content && ids?split(",")?seq_contains(field.typeid.toString()))>class="active"
+  </#if>><a href="<#if field.type==3>{ms:global.html/}${field.typeurl}<#else>{ms:global.html/}${field.typelink}</#if>" >${field.typetitle}</a></li>
+  {/ms:channel}
+</#if>
+</ul>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <div class="wzjs-1 clearfix">
+      <div class="pic">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide img-center"><img src="/{ms:global.style/}/images/1-201115110u60-l.jpg" class="jqzoom"></div>
+            <div class="swiper-slide img-center"><img src="/{ms:global.style/}/images/1-2011151106310-l.jpg" class="jqzoom"></div>
+            <div class="swiper-slide img-center"><img src="/{ms:global.style/}/images/1-2011151106310-l.jpg" class="jqzoom"></div>
+            <div class="swiper-slide img-center"><img src="/{ms:global.style/}/images/1-2011151109540-l.jpg" class="jqzoom"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="info">
+        <h1><span>集团型网站建设套餐</span><small style="background-color: #ff6600;">个</small><small style="background-color: #01cdff;">性</small></h1>
+        <div class="text">
+          <div class="item">
+            <div class="label"> 建站定位</div>
+            <div class="con"> 用于集团企业品牌宣传推广类网站建设，整洁，大气，精美创意风格。</div>
+          </div>
+          <div class="item">
+            <div class="label"> 价格区间</div>
+            <div class="con"> <strong>4000</strong> 元/左右</div>
+          </div>
+          <div class="item sb-bb">
+            <div class="sb-it">
+              <div class="label"> 优惠信息</div>
+              <div class="con">送20G 阿里云千兆独享服务器+送5年域名</div>
+            </div>
+            <div class="sb-it">
+              <div class="label"> 制作周期</div>
+              <div class="con">20-25个工作日交付</div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="label"> 定制网站</div>
+            <div class="con"> 联系在线客服</div>
+          </div>
+          <div class="btn">
+             <a href="javascript:;" rel="nofollow" target="_blank">在线客服</a>
+             <a href="javascript:;">技术微信<div class="img-center"><img src="data:image/png;base64,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" /></div></a>
+             {ms:arclist typeid="1901882669555359746" size=1}<a href="{ms:global.html/}${field.link}">{@ms:len field.title 15 /}</a>{/ms:arclist}
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <div class="wzjs-box">
+      <div class="wzjs-tit"> <em>温馨提示：全后台管理，新手也容易操作</em> <span><i>1</i>功能配置说明</span> </div>
+      <div class="wzjs-2">
+        <div class="tel">咨询顾问：400-xxx-xxxx</div>
+        <strong>公司郑重承诺：</strong>设计作品均为原创UI设计 , 注重图片版权 , 符合广告法 , 拒绝侵权!</div>
+      <div class="table-2">
+        <table>
+          <tr>
+            <th>项目</th>
+            <th>说明</th>
+            <th>备注</th>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__36.jpg" alt=""> 域名注册</td>
+            <td>.com / .net / .cn / .com.cn / .org / .cc / .mobi等任选</td>
+            <td>其他类型域名需补差价</td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__40.jpg" alt=""> 网站服务器</td>
+            <td>5G容量,千兆带宽阿里云服务器，速度稳定，协助办理ICP备案 (阿里云速度如何)</td>
+            <td>可根据实际情况增加主机容量。</td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__42.jpg" alt=""> 续费价格</td>
+            <td>500元/年,费用包含：域名续费1年、服务器续费1年、网站维护</td>
+            <td>可3年、5年续费更价格优惠！</td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__44.jpg" alt=""> 导航栏目</td>
+            <td>首页,公司介绍,产品中心（分二级）,新闻中心,成功案例,资料下载，视频中心,人才招聘,在线留言,联系我们等</td>
+            <td>可分二级、下拉特效、资料下载等</td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__48.jpg" alt=""> 设计标准</td>
+            <td>专业美工设计制作，可反复修改，直到满意为止！ 精美Banner幻灯片设计5张</td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__51.jpg" alt=""> 资料录入</td>
+            <td>代录入网站产品图片（450张以内）,新闻文章、公司简介完善</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__53.jpg" alt=""> 功能说明</td>
+            <td><ul class="wzjs-3 clearfix">
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.1.2_27.png" alt=""></div>
+                    <p>网站首页</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.1.2_30.png" alt=""></div>
+                    <p>公司简介</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.1.2_33.png" alt=""></div>
+                    <p>产品展示</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.2.2_42.png" alt=""></div>
+                    <p>案例展示</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.1.2_38.png" alt=""></div>
+                    <p>新闻动态</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.1.2_39.png" alt=""></div>
+                    <p>招贤纳士</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.2.2_10.png" alt=""></div>
+                    <p>文件下载</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.2.2_40.png" alt=""></div>
+                    <p>视频播放</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.1.2_44.png" alt=""></div>
+                    <p>联系我们</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.1.2_45.png" alt=""></div>
+                    <p>QQ客服/微信</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.1.2_40.png" alt=""></div>
+                    <p>在线留言</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="wrap">
+                    <div class="img-center"><img src="/{ms:global.style/}/images/3.1.2_46.png" alt=""></div>
+                    <p>流量统计</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="wzjs-3-tips">
+                <p><strong>注释：</strong>不仅限于以上版块，客户可提出自己的定制需求，可根据自身情况调整栏目</p>
+                <p><strong>后台管理：</strong>通过后台系统可实现发布、修改、删除功能；产品发布及分类管理、新闻管理系统、企业管理发布，案例管理、留言管理等。</p>
+                <p><strong>优惠：</strong>所有签单客户， 均可获得价值 1200元/企业邮箱一个，有效提升企业形象；</p>
+              </div></td>
+            <td>可根据自身情况调整栏目</td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__57.jpg">网站备案</td>
+            <td>协助客户办理ICP备案,无需客户东奔西跑，我司全权代理！(全程无任何费用)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__55.jpg">推广优化</td>
+            <td>网站系统和前台页面代码利于SEO优化，免费提供BAIDU优化服务指导，保证百度收录(不承诺排名)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__48.jpg">增值服务</td>
+            <td> 1、增加语言版本：40%<br>
+              2、网站Logo设计：500元起/个<br>
+              3、网站空间扩容：与客服沟通<br>
+              4、企业邮箱申请：与客服沟通。<br>
+              5、SEO关键词优化：与客服沟通。 </td>
+            <td>根据客户实际需求商议</td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__57.jpg" alt="">付款方式</td>
+            <td>签订《网站建设合同》交付50%预付款，网站交付后支付尾款<br>
+              1、北京客户我司安排技术上门签订合同时可支付现金、网转、支票等<br>
+              2、外地客户可通过银行汇款、支付宝、微信等方式支付</td>
+            <td>具体收款方式可参考《网站建设合同》</td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__55.jpg" alt="">关于发票</td>
+            <td>在网站完成验收后,付清尾款的当月月底前开具出来,邮寄到客户公司</td>
+            <td>费用含增值税发票</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="wzjs-box">
+      <div class="wzjs-tit"> <em>温馨提示：全后台管理，新手也容易操作</em> <span><i>2</i>服务器参数</span> </div>
+      <div class="table-2">
+        <table>
+          <tr>
+            <th>项目</th>
+            <th>说明</th>
+            <th>备注</th>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__36.jpg" alt="">操作系统</td>
+            <td>Windows 2008</td>
+            <td>可根据客户意向选择</td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__40.jpg" alt="">空间大小</td>
+            <td>5G容量,千兆带宽阿里云服务器，速度稳定，协助办理ICP备案</td>
+            <td>可根据实际情况增加主机容量。</td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__42.jpg" alt="">数据库类型</td>
+            <td>MySql/MSsql</td>
+            <td>可根据实际情况增加主机容量</td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__44.jpg" alt="">数据库大小</td>
+            <td>200M</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__44.jpg" alt="">脚本支持</td>
+            <td>Html、WAP、ASP、.NET(1.0/2.0/3.5/4.0/4.5)/PERL5、PHP4、5切换</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__44.jpg" alt="">月流量</td>
+            <td>无限制</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__44.jpg" alt="">IIS并发</td>
+            <td>800</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><img src="/{ms:global.style/}/images/psd__44.jpg" alt="">子目录绑定个数</td>
+            <td>10个</td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="wzjs-box">
+      <div class="wzjs-tit"> <em>温馨提示：全后台管理，新手也容易操作</em> <span><i>3</i>网站制作流程</span> </div>
+      <ul class="wzjs-4 clearfix">
+        <li>
+          <div class="wrap">
+            <div class="img-center"><img src="/{ms:global.style/}/images/lc_68.jpg" alt=""></div>
+            <p>客服沟通</p>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <div class="img-center"><img src="/{ms:global.style/}/images/lc_70.jpg" alt=""></div>
+            <p>给予报价</p>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <div class="img-center"><img src="/{ms:global.style/}/images/lc_72.jpg" alt=""></div>
+            <p>签署合同</p>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <div class="img-center"><img src="/{ms:global.style/}/images/lc_74.jpg" alt=""></div>
+            <p>前端制作</p>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <div class="img-center"><img src="/{ms:global.style/}/images/lc_76.jpg" alt=""></div>
+            <p>后台开发</p>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <div class="img-center"><img src="/{ms:global.style/}/images/lc_78.jpg" alt=""></div>
+            <p>整站测试</p>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <div class="img-center"><img src="/{ms:global.style/}/images/lc_80.jpg" alt=""></div>
+            <p>开通上线</p>
+          </div>
+        </li>
+        <li>
+          <div class="wrap">
+            <div class="img-center"><img src="/{ms:global.style/}/images/lc_82.jpg" alt=""></div>
+            <p>售后维护</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="wzjs-5 clearfix">
+      <div class="bg"></div>
+      <div class="wzjs-box wzjs-5-left">
+        <div class="wzjs-tit"> <span><i>4</i>需提供的资料</span> </div>
+        <div class="text">
+          <p>企业介绍：如公司简介、环境图片等</p>
+          <p>企业LOGO：企业如没有LOGO，LOGO位置则直接用公司全称代替</p>
+          <p>联系方式：如：公司电话，邮箱、联系QQ、公司地址等</p>
+          <p>产品资料：如产品名称、产品描述、产品图片等</p>
+          <p>企业新闻：企业如没有相关新闻，则直接用企业所属行业的行业新闻代替</p>
+          <p>其他资料：资质荣誉，行业相关性资料</p>
+          <p>已有域名的客户还需提供域名后台密码</p>
+        </div>
+      </div>
+      <div class="wzjs-box wzjs-5-right">
+        <div class="wzjs-tit"> <span><i>5</i>售后服务</span> </div>
+        <div class="text">
+          <p>网站教程：提供网站后台操作培训；网站后台操作手册</p>
+          <p>数据安全：网站数据定期备份</p>
+          <p>网络安全：后台账号密码重置；网站后台路径修改</p>
+          <p>搜索递交：各大搜索引擎平台登录提交、确保短期内新站即可搜索；</p>
+          <p>漏洞修复：防范黑客入侵网站，检查网站各个功能，链接是否有错。</p>
+          <p>客服在线：7*24小时远程技术支持</p>
+          <p>续费维护：次年域名空间邮箱代续费维护</p>
+          <p>程序维护：细节修改次数不限</p>
+        </div>
+      </div>
+    </div>
+    <div class="wzjs-box" style="margin-bottom: 0;">
+      <div class="wzjs-tit"> <em>费用透明、童叟无欺、不忽悠客户</em> <span><i>6</i>费用构成</span> </div>
+      <dl class="wzjs-6 clearfix">
+        <dt class="img-center"><img src="/{ms:global.style/}/images/web.jpg" alt=""></dt>
+        <dd>
+          <p style="white-space: normal;">策划与美术设计：50%</p>
+          <p style="white-space: normal;">前端及交互制作：20%</p>
+          <p style="white-space: normal;">程序代码编写：20%</p>
+          <p style="white-space: normal;">域名及主机：8%</p>
+          <p style="white-space: normal;">其它费用：2%</p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<!--客户案例-->
+<div class="section" style="background-color: #f2f2f2;">
+  <div class="container">
+    <div class="wzjs-tit"> <em>费用透明、童叟无欺、不忽悠客户</em> <span><i>7</i>推荐精品案例</span> </div>
+    <ul class="list-4 clearfix">
+      {ms:arclist typeid="1901882669555359759" size=6}
+      <li> <a href="{ms:global.html/}${field.link}">
+        <div class="img-cover"><span style="background-image: url({@ms:file field.litpic/});"></span></div>
+        <div class="text">
+          <h4>{@ms:len field.title 15 /}</h4>
+        </div>
+        </a> </li>
+      {/ms:arclist}
+    </ul>
+    {ms:channel type='self' typeid="1901882669555359751"}<a href="{ms:global.html/}${field.typelink}" class="more-big-2">查看更多案例 请联系客服</a>{/ms:channel}</div>
+</div>
+<#include "comn.html" />
+
+<!--页面底部-->
+<#include "foot.html" />
+<script>
+    var banner = new Swiper('.banner', {
+        autoplay: true,
+        loop: true,
+        navigation: {
+            prevEl: '.banner .swiper-button-prev',
+            nextEl: '.banner .swiper-button-next'
+        },
+        pagination: {
+            el: '.banner .swiper-pagination',
+            clickable: true
+        },
+        on: {
+            init: function (swiper) {
+                var slide = this.slides.eq(0);
+                slide.addClass('ani-slide');
+            },
+            transitionStart: function () {
+                for (i = 0; i < this.slides.length; i++) {
+                    var slide = this.slides.eq(i);
+                    slide.removeClass('ani-slide');
+                }
+            },
+            transitionEnd: function () {
+                var slide = this.slides.eq(this.activeIndex);
+                slide.addClass('ani-slide');
+
+            },
+        }
+    });
+
+    $('.timer').each(function () {
+        $(this).countTo();
+    });
+
+    tabsSwiper('.index-news-menu', '.index-news-con');
+</script> 
+<script>
+    var banner = new Swiper('.wzjs-1 .swiper-container', {
+        autoplay: true,
+        loop: true,
+        pagination: {
+            el: '.wzjs-1 .swiper-pagination',
+            clickable: true
+        }
+    });
+
+    tabsSwiper('.wzjs-7 .menu', '.wzjs-7 .con');
+</script> 
+<script>
+  if ($(window).width() > 767) {
+    $('.jqzoom').imagezoom();
+  }
+    $('.preview .swiper-slide').eq(0).addClass('active-nav');
+
+    var viewSwiper = new Swiper('.view .swiper-container', {
+        on: {
+            slideChangeTransitionStart: function() {
+                updateNavPosition()
+            }
+        }
+    });
+    $('.view .arrow-left,.preview .arrow-left').on('click', function(e) {
+        e.preventDefault();
+        if (viewSwiper.activeIndex === 0) {
+            viewSwiper.slideTo(viewSwiper.slides.length - 1, 1000);
+            return
+        }
+        viewSwiper.slidePrev();
+    });
+    $('.view .arrow-right,.preview .arrow-right').on('click', function(e) {
+        e.preventDefault();
+        if (viewSwiper.activeIndex === viewSwiper.slides.length - 1) {
+            viewSwiper.slideTo(0, 1000);
+            return
+        }
+        viewSwiper.slideNext();
+    });
+    var previewSwiper = new Swiper('.preview .swiper-container', {
+        //visibilityFullFit: true,
+        slidesPerView: 4,
+        allowTouchMove: false,
+        spaceBetween: 5,
+        on: {
+            tap: function() {
+                viewSwiper.slideTo(previewSwiper.clickedIndex)
+            }
+        },
+        breakpoints: {
+            767: {
+                slidesPerView: 3
+            }
+        }
+    });
+    function updateNavPosition() {
+        $('.preview .active-nav').removeClass('active-nav');
+        var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav');
+        if (!activeNav.hasClass('swiper-slide-visible')) {
+            if (activeNav.index() > previewSwiper.activeIndex) {
+                var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1;
+                previewSwiper.slideTo(activeNav.index() - thumbsPerNav);
+            } else {
+                previewSwiper.slideTo(activeNav.index());
+            }
+        }
+    }
+</script>
+</body>
+</html>

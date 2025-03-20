@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+<title>{ms:global.name/}</title>
+<meta name="keywords" content="{ms:global.keyword/}" />
+<meta name="description" content="{ms:global.descrip/}" />
+<link rel="stylesheet" href="/{ms:global.style/}/css/animate.min.css">
+<link rel="stylesheet" href="/{ms:global.style/}/css/swiper.min.css">
+<link rel="stylesheet" href="/{ms:global.style/}/css/style.css">
+<script src="/{ms:global.style/}/js/jquery.min.js"></script>
+<script src="/{ms:global.style/}/js/wow.min.js"></script>
+<script src="/{ms:global.style/}/js/swiper.min.js"></script>
+<script src="/{ms:global.style/}/js/style.js"></script>
+<script type="text/javascript" src="{ms:global.host/}/static/plugins/vue/2.6.9/vue.min.js"></script>
+<script src="{ms:global.host/}/static/plugins/element-ui/2.15.7/index.min.js"></script>
+<link rel="stylesheet" href="{ms:global.host/}/static/plugins/element-ui/2.15.7/theme-chalk/index.min.css">
+<body>
+<div id="app" v-cloak>
+<!--页面头部-->
+<#include "head.html" />
+
+
+<!--栏目banner图-->
+<div class="banner-sub" style="background-image: url(<#if '{@ms:file field.typelitpic/}'!=''>{@ms:file field.typelitpic/}<#else>{ms:channel type='parent'}{@ms:file field.typelitpic/}{/ms:channel}</#if>);">
+  <div class="container">
+    <div class="inner wow slideInLeft">${field.typetitle}</div>
+  </div>
+</div>
+
+<!--子栏目导航2-->
+<div class="section">
+  <div class="case-wrap">
+    <ul class="list-1 clearfix">
+      {ms:arclist size=16 ispaging=true}
+      <li class="wow slideInUp"> <a href="{ms:global.html/}${field.link}">
+        <div class="img-cover"> <span style="background-image:url({@ms:file field.litpic/});"></span> </div>
+        <div class="text">
+          <div class="inner">
+            <h4>{@ms:len field.title 15 /}</h4>
+            <p>{@ms:len field.descrip 110 /}</p>
+          </div>
+        </div>
+        </a> </li>
+        {/ms:arclist}
+      
+    </ul>
+  </div>
+  
+  <!--分页导航-->
+  <div class="container">
+      <#if page.rcount&gt;0>
+      <div class="pages">
+          <div class="page">
+              <el-pagination
+                      background
+                      @current-change="handleCurrentChange"
+                      :page-size="pageSize"
+                      :current-page.sync="pageCur"
+                      layout="prev, pager, next, jumper"
+                      :total="contentCount"></el-pagination>
+          </div>
+      </div>
+      <#else>
+      未查询到任何数据!
+  </#if>
+  </div>
+</div>
+
+<!--页面底部-->
+<#include "foot.html" />
+<script>
+    var banner = new Swiper('.banner', {
+        autoplay: true,
+        loop: true,
+        navigation: {
+            prevEl: '.banner .swiper-button-prev',
+            nextEl: '.banner .swiper-button-next'
+        },
+        pagination: {
+            el: '.banner .swiper-pagination',
+            clickable: true
+        },
+        on: {
+            init: function (swiper) {
+                var slide = this.slides.eq(0);
+                slide.addClass('ani-slide');
+            },
+            transitionStart: function () {
+                for (i = 0; i < this.slides.length; i++) {
+                    var slide = this.slides.eq(i);
+                    slide.removeClass('ani-slide');
+                }
+            },
+            transitionEnd: function () {
+                var slide = this.slides.eq(this.activeIndex);
+                slide.addClass('ani-slide');
+
+            },
+        }
+    });
+
+    $('.timer').each(function () {
+        $(this).countTo();
+    });
+
+    tabsSwiper('.index-news-menu', '.index-news-con');
+</script>
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        watch:{
+        },
+        data: {
+            //当前页数
+            pageCur: ${(page.cur)!1},
+            //每页文章条数
+            pageSize: ${(page.size)!20},
+            //页数总数
+            pageTotal: ${(page.total)!0},
+            //内容总数
+            contentCount: ${(page.rcount)!0}
+        },
+        methods: {
+            switchShow:function(arr){
+                var that = this
+                arr.forEach(function(x){
+                    let e = that.$el.querySelector("#key_"+x)
+                    if(e){
+                        e.style.display=e.style.display=='none'?'flex':'none'
+                    }
+                })
+            },
+            handleCurrentChange:function(val) {
+                if(val==1) {
+                    location.href = "{ms:global.url/}/${field.categoryPath}/index.html";
+                } else {
+                    location.href = "{ms:global.url/}/${field.categoryPath}/list-" + val + ".html";
+                }
+            }
+        },
+        created(){
+        }
+    })
+</script>
+
+</html>

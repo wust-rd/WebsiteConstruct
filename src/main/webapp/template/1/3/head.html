@@ -1,0 +1,49 @@
+<div class="header">
+  <div class="container clearfix">
+    <div class="sp_nav"> <span class="sp_nav1"></span> <span class="sp_nav2"></span> <span class="sp_nav3"></span> </div>
+    <a href="javascript:;" class="menu-btn"><span></span></a>
+    <div class="logo img-center"> <a href="/"><img src="{@ms:file global.logo/}" alt="{ms:global.name/}" title="某某公司"></a> </div>
+    <ul class="nav">
+      <li <#assign typeid=field.typeid><#if typeid==''>class='active'
+</#if>><a href="/" rel="nofollow">首页</a></li>
+      <#assign typeid=field.typeid>
+<#assign ids=field.parentids>
+<#assign parentid=field.parentid>{ms:channel type='nav' flag='n' size='10'}  
+      <li class="<#if field.typeid == typeid || (ids?has_content && ids?split(",")?seq_contains(field.id.toString()))>active
+</#if> <#if field.childsize &gt; 0>dropdown
+</#if>"> <i class='arr'></i><a href="<#if field.type==3>{ms:global.html/}${field.typeurl}<#else>{ms:global.html/}${field.typelink}</#if>">${field.typetitle}</a>
+        <#if field.childsize &gt; 0>
+        <div class='dropdown-box'>
+          {ms:channel}  
+          <p><a href="<#if field.type==3>{ms:global.html/}${field.typeurl}<#else>{ms:global.html/}${field.typelink}</#if>">${field.typetitle}</a></p>
+          {/ms:channel}
+        </div>
+        
+</#if>
+      </li>
+      {/ms:channel}
+    </ul>
+  </div>
+</div>
+<div class="sp_nav-box">
+  <div class="container">
+    <div class="inner">
+      <div class="logo img-center wow slideInDown"><img src="/upload/1/images/nylogo.png" alt="某某公司"></div>
+      <ul class="wow slideInDown">
+        <li><a href="/" rel="nofollow">返回首页</a></li>
+        <#assign typeid=field.typeid>
+<#assign ids=field.parentids>
+<#assign parentid=field.parentid>{ms:channel type='nav' flag='n' size='10'}  
+        <li><a href="<#if field.type==3>{ms:global.html/}${field.typeurl}<#else>{ms:global.html/}${field.typelink}</#if>">${field.typetitle}</a></li>
+        {/ms:channel}
+      </ul>
+      <div class="in-ready wow slideInUp">
+        <div class="container">
+          <h4>我们已经准备好了,你呢？</h4>
+          <div class="btn"><a href="javascript:;" rel="nofollow" target="_blank">获取网站建设报价</a></div>
+          <p>2021我们与您携手共赢，为您的企业形象保驾护航！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

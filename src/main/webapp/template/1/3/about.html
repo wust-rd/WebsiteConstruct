@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+<title>{ms:global.name/}</title>
+<meta name="keywords" content="{ms:global.keyword/}" />
+<meta name="description" content="{ms:global.descrip/}" />
+<link rel="stylesheet" href="/{ms:global.style/}/css/animate.min.css">
+<link rel="stylesheet" href="/{ms:global.style/}/css/swiper.min.css">
+<link rel="stylesheet" href="/{ms:global.style/}/css/style.css">
+<script src="/{ms:global.style/}/js/jquery.min.js"></script>
+<script src="/{ms:global.style/}/js/wow.min.js"></script>
+<script src="/{ms:global.style/}/js/swiper.min.js"></script>
+<script src="/{ms:global.style/}/js/style.js"></script>
+</head>
+<body>
+
+<!--页面头部-->
+<#include "head.html" />
+
+<!--栏目banner图-->
+<div class="banner-sub" style="background-image: url(<#if '{@ms:file field.typelitpic/}'!=''>{@ms:file field.typelitpic/}<#else>{ms:channel type='parent'}{@ms:file field.typelitpic/}{/ms:channel}</#if>);">
+  <div class="container">
+    <div class="inner wow slideInLeft">以服务为核心的互联网公司</div>
+  </div>
+</div>
+
+<!--当前位置-->
+<div class="position">
+  <div class="container"><i></i>当前位置：<a href="/" class="ms-channel-path-index"> 首页 </a>{ms:channel type="path"}     >> <a href={ms:global.html/}${field.typelink} class="ms-channel-path-link">         ${field.typetitle}  </a>     {/ms:channel}</div>
+</div>
+<div class="section">
+  <div class="container">
+    <div class="about-1">
+      <div class="img-center"><img src="/upload/1/images/nylogo.png" /></div>
+      <div class="text">${field.content}</div>
+      <ul class="in-total clearfix">
+        <li><span><strong class="timer" data-speed="1500" data-to="11">0</strong>年</span>
+          <p>品牌网站建设与营销经验</p>
+        </li>
+        <li><span><strong class="timer" data-speed="1500" data-to="4000">0</strong>家</span>
+          <p>服务超4000多家企业用户</p>
+        </li>
+        <li><span><strong class="timer" data-speed="1500" data-to="260">0</strong>项</span>
+          <p>网站细节标准</p>
+        </li>
+        <li><span><strong class="timer" data-speed="1500" data-to="24">0</strong>时</span>
+          <p>客户服务真正7X24h响应</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="section in-desc about-2">
+  <div class="container clearfix">
+    <div class="logo img-center"><img src="/{ms:global.style/}/images/fuwumv.png" alt="${field.typetitle}"></div>
+    <div class="text">
+      <h4>选择我们，助您企业扬帆起航！</h4>
+      <h5>多年来，我们一直用诚心、责任心服务每一位客户</h5>
+      <p>我们坚信：善待客户，将会成为终身客户。我们能坚持多年，是因为我们一直可值得信赖。我们从不忽悠初访客户， 也未曾收到过客户投诉， 我们用心做好本职工作，不忘初心，方得始终。</p>
+      <a href="javascript:;" rel="nofollow" target="_blank">想要做网站？选择我们</a> </div>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <div class="section-title section-title-2"> <strong>我们优势</strong>
+      <p>/ 茫茫人海中 ,凭什么选择我们合作呢？ /</p>
+    </div>
+    <ul class="about-3 clearfix">
+      <li> <a href="javascript:;">
+        <h4>● 绝无隐形收费</h4>
+        <p>重合同，守承诺，项目制作期间绝无隐形收费！</p>
+        </a> </li>
+      <li> <a href="javascript:;">
+        <h4>● 交付网站源码</h4>
+        <p>网站所有权归客户所有，提供源码及UI原型设计文件！</p>
+        </a> </li>
+      <li> <a href="javascript:;">
+        <h4>● 绝不外包项目</h4>
+        <p>项目绝不外包第三方，我司自有程序员及设计美工！</p>
+        </a> </li>
+      <li> <a href="javascript:;">
+        <h4>● 签订正规合同</h4>
+        <p>签订正规网站建设合同，开具发票，零风险合作！</p>
+        </a> </li>
+      <li> <a href="javascript:;">
+        <h4>● 自有CMS,拒绝侵权</h4>
+        <p>我司自主开发管理系统,拒绝套用，保障权益！</p>
+        </a> </li>
+      <li> <a href="javascript:;">
+        <h4>● 终身技术维护</h4>
+        <p>项目售后维护，一对一技术跟踪，7X24小时在线！</p>
+        </a> </li>
+    </ul>
+    <div class="about-3-more"> <a href="javascript:;">哪些客户选择了我们？</a> <a href="javascript:;" rel="nofollow" target="_blank">支持在线评论-网民口碑</a> </div>
+  </div>
+</div>
+<div class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-title section-title-2"> <strong>工作环境</strong>
+      <p>/ 不大不小刚刚好 ,自由开放的办公区域 /</p>
+    </div>
+    <div class="img-center"><img src="/{ms:global.style/}/images/bghj.jpg" alt=""></div>
+  </div>
+</div>
+<div class="section" style="padding: 0;">
+  <div class="container">
+    <div class="section-title section-title-2"> <strong>凭什么和你们合作？</strong>
+      <p>是否提供网站三要素？！是否有实力？！是否源代码开发？！自己的网站是否有排名？！<br>
+        比较品牌的背景实力，可以从机房资源等级、IDC服务资质、企业实体、售后服务能力、行业客户案例等。<br>
+        多个角度进行考量，如发现资质不全、外包公司、运维能力不过硬等问题需要谨慎选择。</p>
+    </div>
+  </div>
+</div>
+<div class="section" style="background-color: #f4f4f4;">
+  <div class="container">
+    <div class="table-1">
+      <table>
+        <tr>
+          <th>服务项目</th>
+          <th>某某网络科技有限公司</th>
+          <th>其他服务商</th>
+        </tr>
+        <tr>
+          <td align="center">编码方式</td>
+          <td><img src="/{ms:global.style/}/images/duigou_108.jpg" alt=""> 自主研发CMS(自有cms9.0软件著作权)，版权保障</td>
+          <td><img src="/{ms:global.style/}/images/duigou_111.jpg" alt=""> 网上下载的程序,套用CMS源码,涉及侵权，无应对能力</td>
+        </tr>
+        <tr>
+          <td align="center">代码给不给</td>
+          <td><img src="/{ms:global.style/}/images/duigou_108.jpg" alt=""> 随时提供网站源码和FTP</td>
+          <td><img src="/{ms:global.style/}/images/duigou_111.jpg" alt=""> 95%公司不提供源码</td>
+        </tr>
+        <tr>
+          <td align="center">域名归属权</td>
+          <td><img src="/{ms:global.style/}/images/duigou_108.jpg" alt=""> 归客户所有，随时提供权限</td>
+          <td><img src="/{ms:global.style/}/images/duigou_111.jpg" alt=""> 域名代购,不提供管理权,后期极易产生纠纷。</td>
+        </tr>
+        <tr>
+          <td align="center">空间服务器</td>
+          <td><img src="/{ms:global.style/}/images/duigou_108.jpg" alt=""> 阿里云/西数 伙伴代理商</td>
+          <td><img src="/{ms:global.style/}/images/duigou_111.jpg" alt=""> 杂牌便宜服务器，不稳定，速度慢，不利于营销推广</td>
+        </tr>
+        <tr>
+          <td align="center">推广经验</td>
+          <td><img src="/{ms:global.style/}/images/duigou_108.jpg" alt=""> 根据行业制定推广计划,不花冤枉钱</td>
+          <td><img src="/{ms:global.style/}/images/duigou_111.jpg" alt=""> 无推广经验、花了钱无效果甚微</td>
+        </tr>
+        <tr>
+          <td align="center">网站扩展性</td>
+          <td><img src="/{ms:global.style/}/images/duigou_108.jpg" alt=""> 源代码开发，可拓展及二次开发</td>
+          <td><img src="/{ms:global.style/}/images/duigou_111.jpg" alt=""> 模板套用,后期不可拓展功能</td>
+        </tr>
+        <tr>
+          <td align="center">网站优化排名</td>
+          <td><img src="/{ms:global.style/}/images/duigou_108.jpg" alt=""> 自然排名好,多个关键词居首页 搜：北京建站公司-搜搜看</td>
+          <td><img src="/{ms:global.style/}/images/duigou_111.jpg" alt=""> 自己站都没排名，然后忽悠客户做排名</td>
+        </tr>
+        <tr>
+          <td align="center">网站备案</td>
+          <td><img src="/{ms:global.style/}/images/duigou_108.jpg" alt=""> 正规ICP备案流程，一次通过</td>
+          <td><img src="/{ms:global.style/}/images/duigou_111.jpg" alt=""> 没经验，资料审核不合格，退回,耽误制作周期</td>
+        </tr>
+        <tr>
+          <td align="center">外包不外包</td>
+          <td><img src="/{ms:global.style/}/images/duigou_108.jpg" alt=""> 签约项目从不外包，对客户负责到底</td>
+          <td><img src="/{ms:global.style/}/images/duigou_111.jpg" alt=""> 无技术人员，项目全部外包，运维隐患大</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <div class="section-title section-title-2"> <strong>合作单位</strong>
+      <p>/ 速度安全保障 ,只为您的网站快人一步 /</p>
+    </div>
+    <ul class="in-partners">
+      {ms:arclist typeid="1901882669555359763" size=18}
+      <li><a href="javascript:;">
+        <div class="img-center"><img src="{@ms:file field.litpic/}" alt="${field.title}"></div>
+        </a></li>
+      {/ms:arclist}
+    </ul>
+  </div>
+</div>
+<div class="section in-ready" style="padding-top: 0;">
+  <div class="container">
+    <h4>我们已经准备好了,你呢？</h4>
+    <div class="btn"><a href="javascript:;" rel="nofollow" target="_blank">获取网站建设报价</a></div>
+    <p>2021我们与您携手共赢，为您的企业形象保驾护航！</p>
+  </div>
+</div>
+<div class="section" style="overflow: hidden;padding-top: 0;">
+  <div class="container">
+    <ul class="in-partone clearfix">
+      <li class="wow bounceInLeft">
+        <div class="wrap">
+          <h4>继续在老套路中化作尘埃</h4>
+          <a href="javascript:;" rel="nofollow" target="_blank">评估旧网站</a> </div>
+      </li>
+      <li class="wow bounceInRight">
+        <div class="wrap">
+          <h4>还是厚积薄发重新崛起</h4>
+          <a href="javascript:;" rel="nofollow" target="_blank">启动新征程</a> </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--页面底部-->
+<#include "foot.html" />
+<script>
+    var banner = new Swiper('.banner', {
+        autoplay: true,
+        loop: true,
+        navigation: {
+            prevEl: '.banner .swiper-button-prev',
+            nextEl: '.banner .swiper-button-next'
+        },
+        pagination: {
+            el: '.banner .swiper-pagination',
+            clickable: true
+        },
+        on: {
+            init: function (swiper) {
+                var slide = this.slides.eq(0);
+                slide.addClass('ani-slide');
+            },
+            transitionStart: function () {
+                for (i = 0; i < this.slides.length; i++) {
+                    var slide = this.slides.eq(i);
+                    slide.removeClass('ani-slide');
+                }
+            },
+            transitionEnd: function () {
+                var slide = this.slides.eq(this.activeIndex);
+                slide.addClass('ani-slide');
+
+            },
+        }
+    });
+
+    $('.timer').each(function () {
+        $(this).countTo();
+    });
+
+    tabsSwiper('.index-news-menu', '.index-news-con');
+</script>
+</body>
+</html>
